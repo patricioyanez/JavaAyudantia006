@@ -65,5 +65,19 @@ public class Vehiculo {
     public String toString() {
         return "Vehiculo{" + "patente=" + patente + ", anio=" + anio + ", kilometraje=" + kilometraje + ", costoServicio=" + costoServicio + ", cliente=" + cliente + '}';
     }
-            
+    public void descuento()
+    {
+        if(this.cliente.isEsNuevo() || this.getCostoServicio() >= 100000)
+        {// convertir decimal a entero
+            this.costoServicio = (int) (this.costoServicio* 0.95);
+        }
+    }
+    public void enviarCorreo()
+    {
+        String mensaje = "Estimado " + this.cliente.getNombre() +
+                "\nEnviamos a su correo " + this.cliente.getCorreo() +
+                " aviso de que su vehiculo patente " + this.getPatente() +
+                " esta listo para su retiro. Adios!";
+        System.out.println(mensaje);
+    }
 }
