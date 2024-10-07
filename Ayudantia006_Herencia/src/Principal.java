@@ -11,6 +11,7 @@ public class Principal {
     
         Ejercicio 4: Crear un nuevo teclado y solicitar los
     datos por teclado. (usar Scanner)
+    Leer ppt 2.1.1 y 2.2.1
     
     */
     public static void main(String[] args) {
