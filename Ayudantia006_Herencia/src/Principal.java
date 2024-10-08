@@ -1,5 +1,10 @@
 public class Principal {
     /*
+    Crear las clases Producto con los atributos: id, nombre, marca y precio. Adicionalmente
+    2 Subclases Teclado ( cantidad de teclas y si es mecanico) y Mouse 
+    (cantidad de botones y si es optico).
+    
+    
         Ejercicio 1: Crear un objeto teclado, completar con
     datos y mostrarlos en la consola.
     
