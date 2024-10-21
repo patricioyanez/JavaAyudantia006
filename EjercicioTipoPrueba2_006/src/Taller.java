@@ -23,4 +23,22 @@ public class Taller {
         }
         return false;
     }
+    public boolean eliminar(String patente)
+    {
+        for (Vehiculo vehiculo : listado) {
+            if(vehiculo.getPatente().equals(patente))
+            {
+                listado.remove(vehiculo);
+                return true;
+            }
+        }
+        return false;
+    }
+    public void listado()
+    {
+        System.out.println("Listado de vehiculos");
+        for (Vehiculo vehiculo : listado) {
+            System.out.println(vehiculo);
+        }
+    }
 }
