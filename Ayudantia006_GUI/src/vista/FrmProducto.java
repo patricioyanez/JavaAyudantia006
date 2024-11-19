@@ -5,6 +5,10 @@
  */
 package vista;
 
+import controlador.ControladorProducto;
+import javax.swing.JOptionPane;
+import modelo.Producto;
+
 /**
  *
  * @author patri
@@ -67,6 +71,11 @@ public class FrmProducto extends javax.swing.JFrame {
         });
 
         btnGrabar.setText("Grabar");
+        btnGrabar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGrabarActionPerformed(evt);
+            }
+        });
 
         btnEliminar.setText("Eliminar");
 
@@ -174,6 +183,35 @@ public class FrmProducto extends javax.swing.JFrame {
         txtPrecio.setText("");
         txtCodigo.requestFocus();
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnGrabarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrabarActionPerformed
+        // TODO add your handling code here:
+        Producto producto = new Producto();
+        
+        // validar
+        
+        int numero = Integer.parseInt(txtCodigo.getText());
+        producto.setCodigo(numero);
+        
+        producto.setDescripcion(txtDescripcion.getText());
+        
+        numero = Integer.parseInt(txtPrecio.getText());
+        producto.setPrecio(numero);
+        
+        ControladorProducto cp = new ControladorProducto();
+        boolean resultado = cp.agregar(producto);
+        
+        if(resultado)
+        {
+            JOptionPane.showMessageDialog(this, "Datos guardados");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "Datos NO guardados");
+        }
+        
+        
+    }//GEN-LAST:event_btnGrabarActionPerformed
 
     /**
      * @param args the command line arguments
