@@ -45,7 +45,7 @@ public class Empresa {
         return false;
     }
     
-    public ArrayList<Producto> buscarProductoMasculino()
+    public ArrayList<Producto> buscarProductoPorDescripcion()
     {
         
         ArrayList<Producto> listado = new ArrayList<Producto>();
